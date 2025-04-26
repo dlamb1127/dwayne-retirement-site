@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dwayne's Retirement</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    video {
+      width: 80%;
+      margin: 20px auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<!-- small update to trigger deploy -->
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="background.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<h1>Happy Retirement, Dwayne!</h1>
+
+<!-- Slideshow -->
+<div class="slideshow-container">
+  <img class="slide" src="images/pic1.jpg" alt="Slide 1">
+  <img class="slide" src="images/pic2.jpg" alt="Slide 2">
+  <img class="slide" src="images/pic3.jpg" alt="Slide 3">
+</div>
+
+<!-- Videos -->
+<video controls>
+  <source src="videos/video1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<video controls>
+  <source src="videos/video2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<script>
+  // Slideshow Script
+  let slideIndex = 0;
+  const slides = document.getElementsByClassName("slide");
+
+  function showSlides() {
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1;}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+  }
+
+  showSlides();
+</script>
+
+</body>
+</html>
